@@ -5,28 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Website with GA4 Tracking</title>
     
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFHS11D38Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QFHS11D38Z');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFHS11D38Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-QFHS11D38Z');
+    </script>
+    
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
         .info { color: gray; margin-top: 20px; }
+        
+        /* --- START of NEW CONSENT STYLING --- */
+        .consent-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: left; /* Aligns content inside the box */
+            background-color: #f9f9f9;
+        }
+        .consent-box h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .mcq-question {
+            margin: 15px 0;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        .mcq-question label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .mcq-question input[type="radio"] {
+            margin-right: 5px;
+        }
+        .consent-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .consent-button:hover {
+            background-color: #0056b3;
+        }
+        /* --- END of NEW CONSENT STYLING --- */
     </style>
 </head>
 <body>
     
+    <div class="consent-box">
+        <h3>Cookie & Tracking Preferences</h3>
+        <p>We use tracking technologies to measure site traffic. Please choose your preferences below.</p>
+
+        <div class="mcq-question">
+            <p><strong>Do you consent to performance/analytics tracking?</strong></p>
+            <label>
+                <input type="radio" name="analytics-consent" value="yes" checked> Yes, I consent to full tracking.
+            </label>
+            <label>
+                <input type="radio" name="analytics-consent" value="no"> No, use only strictly necessary features.
+            </label>
+        </div>
+        
+        <button class="consent-button" onclick="alert('Preferences saved! Note: This button currently has no effect on Google Analytics tracking.')">
+            Save Preferences
+        </button>
+    </div>
     <h1>Welcome to My Simple Tracker Page!</h1>
     <p>This is a basic HTML page. When you load this page, the Google Analytics code in the &lt;head&gt; section runs.</p>
     <p>This action sends a **Page View** event to your Google Analytics 4 property, allowing you to track visitor activity.</p>
     
     <div class="info">
-        
+        <p>The code above demonstrates a non-functional consent banner.</p>
     </div>
 
 </body>
